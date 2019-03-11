@@ -218,7 +218,7 @@ ggplot(menu, aes(Fat, Calories, color = Category  )) +
 
 ## ----tidyverse basic-----------------------------------------------------
 
-data <- read.csv("https://github.com/marco2gandolfo/rforpsychologists/randomdata.csv", sep = ",", header = TRUE)
+data <- read.csv("https://marco2gandolfo.github.io/rforpsychologists/randomdata.csv", sep = ",", header = TRUE)
 
 #quick inspection to check if things are right
 

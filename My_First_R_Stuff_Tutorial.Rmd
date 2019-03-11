@@ -194,9 +194,10 @@ If the file you are aiming to read is a .csv then the function "read.csv" will d
 # A practical example
 
 Datafile available to download: [menu.csv](https://marco2gandolfo.github.io/rforpsychologists/menu.csv) 
-Note that this dataframe has been downloaded from [Joey Stanley Website] (www.joeystanley.com) who has a site full of great tutorials.
 
-*Make sure you change the path below so that it matches the path where you downloaded the datafiles locally.*
+Note that this dataframe has been downloaded from [Joey Stanley Website](www.joeystanley.com) who has a site full of great tutorials.
+
+**Make sure you change the path below so that it matches the path where you downloaded the datafiles locally.**
 
 ```{r, read file}
 #If you are on windows instead of / you can use double \\ 
@@ -398,23 +399,23 @@ We compare two different image categorisation experiments (1 with face pictures 
 
 In each experiments participants were stimulated either to a FaceArea or a ObjectArea Moreover in both experiments the image to judge was either congruent or incongruent with another image in the background.
 
-**So this is a simple 2 (face/object experiment(Between)) x 2 (TMS site, facearea/objectarea) x 2 (congruent/incongruent image cue) **
+**So this is a simple 2 (face/object experiment(Between)) x 2 (TMS site, facearea/objectarea) x 2 (congruent/incongruent irrelevant image) **
 
-What do we expect? In the face experiment we expect effects on RT (and maybe also on the congruency) when stimulating the face area (site of interest) but not for the object area (control site). In the Object experiment we expect the opposite, some effect on RT for the object area but not the face area. 
+What do the experimenters expect expect? In the face experiment effects on RT (and maybe also on the congruency) when stimulating the face area (site of interest) but not for the object area (control site). In the Object experiment the opposite is effected , some effect on RT for the object area but not the face area. 
 
-We know already that there are 4 people to exclude over 46, and we will have thus 21 people per experiment which went through two stimulation sites and 2 rt conditions (congruent, incongruent).
+To show you how to filter data we will exclude 4 people to exclude over 46, and we will have thus 21 people per experiment which went through two stimulation sites and 2 rt conditions (congruent, incongruent).
 
-It smells like we are hoping for a three way interaction Experiment x Site x Congruency but also an interaction Experiment x Site would be cool to see a site and task specific general effect on RT regardless congruency.
+It smells like the experimenters are hypothesising for at least an interaction Experiment x Site where there are some specific effects on Reaction times in each task depending on which site has received the stimulation. Also we might expect these effects to be modulated by the congruency between the relevant image judged and the image in the background.
 
-Remember that these data are not real so what we hope or hypothesised would be better not to appear :)
+Remember that these data are not real so what we hope or hypothesised will probably not appear!
 
-*Link to the dataframe to download* [randomdata](https://github.com/marco2gandolfo/rforpsychologists/randomdata.csv)
+**Link to the dataframe to download** [randomdata](https://marco2gandolfo.github.io/rforpsychologists/randomdata.csv)
 
-*Remember to change the path* if you have downloaded the file locally.
+**Remember to change the path** if you have downloaded the file locally.
 
 ```{r,tidyverse basic}
 
-data <- read.csv("https://github.com/marco2gandolfo/rforpsychologists/randomdata.csv", sep = ",", header = TRUE)
+data <- read.csv("https://marco2gandolfo.github.io/rforpsychologists/randomdata.csv", sep = ",", header = TRUE)
 
 #quick inspection to check if things are right
 
