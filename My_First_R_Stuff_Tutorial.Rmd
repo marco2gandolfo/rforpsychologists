@@ -34,7 +34,7 @@ opts_knit$set(width=75)
 
 # My first attempt to use R
 
-R is a programming language for statistical computing, similar to other programming languages (like matlab). What are its advantages? Honestly the most obvious one for me is that I can go from a computer to the other without panicking about software licenses, drivers, spending two hours installing toolboxes. Moreover, there is a broad community out there (beyond psychologists, notably very selfish people that do not share much their resources) ready to have dumb questions and responses to them.
+R is a programming language for statistical computing, similar to other programming languages (like matlab). What are its advantages? Honestly the most obvious one for me is that I can go from a computer to the other without panicking about software licenses, drivers, spending two hours installing toolboxes. Moreover, there is a broad community out there (beyond psychologists, notably  people that do not share much their resources) ready to answer more or less dumb questions and responses to them. I believe also is a powerful tool to teach for future jobs but also to have a better grasp on the "power" of data analysis. It forces to better understand the methods that we use.
 
 # R is a calculator first of all 
 
@@ -193,12 +193,17 @@ If the file you are aiming to read is a .csv then the function "read.csv" will d
 
 # A practical example
 
+Datafile available to download: [menu.csv](https://marco2gandolfo.github.io/rforpsychologists/menu.csv) 
+Note that this dataframe has been downloaded from [Joey Stanley Website] (www.joeystanley.com) who has a site full of great tutorials.
+
+*Make sure you change the path below so that it matches the path where you downloaded the datafiles locally.*
+
 ```{r, read file}
 #If you are on windows instead of / you can use double \\ 
 #or just / (copying the path and inverting their orientation)
-#dataset taken from the fantastic website of joeymorey credits to him!
+#dataset taken from the fantastic website of Joey Stanley credits to him! (www.joeystanley.com)
 
-menu <- read.csv("~/OneDrive/RCourse_Made_by_Me/manuals/menu.csv", sep = ",")
+menu <- read.csv("https://marco2gandolfo.github.io/rforpsychologists/menu.csv", sep = ",")
 
 ```
 
@@ -391,7 +396,7 @@ We will take **FAKE** (randomly generated) data of an imaginary experiment which
 
 We compare two different image categorisation experiments (1 with face pictures the other one with objects). Different participants participated to the two experiments.
 
-In each experiments participants were stimulated either to a FaceArea or a ObjectArea Moreover in both experiments the image to judge was either congruent or incongruent with a symbolic cue.
+In each experiments participants were stimulated either to a FaceArea or a ObjectArea Moreover in both experiments the image to judge was either congruent or incongruent with another image in the background.
 
 **So this is a simple 2 (face/object experiment(Between)) x 2 (TMS site, facearea/objectarea) x 2 (congruent/incongruent image cue) **
 
@@ -403,10 +408,13 @@ It smells like we are hoping for a three way interaction Experiment x Site x Con
 
 Remember that these data are not real so what we hope or hypothesised would be better not to appear :)
 
-```{r,tidyverse basic}
-# Note to myself Subjects to exclude "P19","P01", "p58","p63"
+*Link to the dataframe to download* [randomdata](https://github.com/marco2gandolfo/rforpsychologists/randomdata.csv)
 
-data <- read.csv("~/OneDrive/RCourse_Made_by_Me/manuals/bootdata2.csv", sep = ",", header = TRUE)
+*Remember to change the path* if you have downloaded the file locally.
+
+```{r,tidyverse basic}
+
+data <- read.csv("https://github.com/marco2gandolfo/rforpsychologists/randomdata.csv", sep = ",", header = TRUE)
 
 #quick inspection to check if things are right
 
@@ -601,7 +609,7 @@ wide_eff <- AveMat %>% #take the averaged matrix
 
 head(wide_eff, 10)  #check if it looks right
 
-write.csv(wide_eff, "~/OneDrive/RCourse_Made_by_Me/manuals/wide_eff.csv")
+write.csv(wide_eff, "~/OneDrive/RCourse_Made_by_Me/rforpsychologists/wide_eff.csv")
 
 
 ```

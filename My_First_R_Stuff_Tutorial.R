@@ -13,6 +13,7 @@ opts_chunk$set(echo=TRUE,
                warning=FALSE)
 opts_knit$set(width=75)
 
+
 ## ---- calculator---------------------------------------------------------
 2+2
 
@@ -103,9 +104,9 @@ mean(df$x) == LuckyNumber
 ## ---- read file----------------------------------------------------------
 #If you are on windows instead of / you can use double \\ 
 #or just / (copying the path and inverting their orientation)
-#dataset taken from the fantastic website of joeymorey credits to him!
+#dataset taken from the fantastic website of Joey Stanley credits to him! (www.joeystanley.com)
 
-menu <- read.csv("~/OneDrive/RCourse_Made_by_Me/manuals/menu.csv", sep = ",")
+menu <- read.csv("https://marco2gandolfo.github.io/rforpsychologists/menu.csv", sep = ",")
 
 
 ## ---- inspect your dataset-----------------------------------------------
@@ -216,9 +217,8 @@ ggplot(menu, aes(Fat, Calories, color = Category  )) +
 
 
 ## ----tidyverse basic-----------------------------------------------------
-# Note to myself Subjects to exclude "P19","P01", "p58","p63"
 
-data <- read.csv("~/OneDrive/RCourse_Made_by_Me/manuals/bootdata2.csv", sep = ",", header = TRUE)
+data <- read.csv("https://github.com/marco2gandolfo/rforpsychologists/randomdata.csv", sep = ",", header = TRUE)
 
 #quick inspection to check if things are right
 
@@ -312,7 +312,7 @@ wide_eff <- AveMat %>% #take the averaged matrix
 
 head(wide_eff, 10)  #check if it looks right
 
-write.csv(wide_eff, "~/OneDrive/RCourse_Made_by_Me/manuals/wide_eff.csv")
+write.csv(wide_eff, "~/OneDrive/RCourse_Made_by_Me/rforpsychologists/wide_eff.csv")
 
 
 
@@ -321,5 +321,7 @@ write.csv(wide_eff, "~/OneDrive/RCourse_Made_by_Me/manuals/wide_eff.csv")
 long_eff <- wide_eff %>% 
             gather(condition, Efficiency, -SubjID, -Experiment) %>% 
             separate(condition, c("Site", "Congruency"), sep = "_")
+
+head(long_eff)
 
 
